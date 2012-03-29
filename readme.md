@@ -11,7 +11,10 @@ Installation
 
     install.ps1
 
-Or copy Primer-DSL.psm1 to $home\Documents\WindowsPowerShell\Modules\PrimerDSL
+Or copy Primer-DSL.psm1 to $home\Documents\WindowsPowerShell\Modules\Primer-DSL.
+In your script import the module:
+
+    Import-Module Primer-DSL
 
 Reference
 ---------
