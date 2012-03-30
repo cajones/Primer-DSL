@@ -35,6 +35,13 @@ function New-WebApplication($PhysicalPath, $Domain, $Description, $Framework = "
         $Description = $Domain
     }
 
+    if($Pipeline -match "Integrated") {
+        $Pipeline = 0
+    }
+    if($Pipeline -match "Classic") {
+        $Pipeline = 1
+    }
+
     if(-not (Test-Path IIS:\)) {
         Import-Module WebAdministration  
     }
