@@ -6,6 +6,7 @@ function Get-SubversionSource($SourceControlPath, $PhysicalPath) {
     } else {
         svn up $PhysicalPath
     }
+    return $PhysicalPath
 }
 Export-ModuleMember -function Get-SubversionSource
 
@@ -27,6 +28,7 @@ function Add-Host($Domain, $IP= "127.0.0.1") {
     } else {
         Write-Host "$Domain already in hosts files"
     }
+    return $Domain
 }
 Export-ModuleMember -function Add-Host
 
@@ -57,5 +59,6 @@ function New-WebApplication($PhysicalPath, $Domain, $Description, $Framework = "
         Set-ItemProperty IIS:\Sites\$Description -name ApplicationPool -value $Description
     }
     Write-Host "$Description web site is setup on your machine.`n"
+    return $Domain
 }
 Export-ModuleMember -function New-WebApplication
