@@ -22,7 +22,7 @@ Export-ModuleMember -function Invoke-Browser
 function Add-Host($Domain, $IP= "127.0.0.1") {
     
     $hosts  = "$env:windir\System32\drivers\etc\hosts";
-    if(-not ((gc $hosts) -match $Domain)) {
+    if(-not ((gc $hosts) -match "\s+$Domain")) {
         ac $hosts "`n$IP`t`t$Domain`n"    
         Write-Host "$Domain has been added to your hosts file"
     } else {
